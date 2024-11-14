@@ -1,0 +1,87 @@
+{{ define "book/updatebook.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新书籍信息</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+
+        }
+
+        div {
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .classbox {
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            margin-top: 10%;
+            background: #e3d2d4;
+            display: -webkit-box;
+            -webkit-box-orient: horizontal;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            border: #999999 1px solid;
+            display: -moz-box;
+            -moz-box-orient: horizontal;
+            -moz-box-pack: center;
+            -moz-box-align: center;
+
+            display: -o-box;
+            -o-box-orient: horizontal;
+            -o-box-pack: center;
+            -o-box-align: center;
+
+            display: -ms-box;
+            -ms-box-orient: horizontal;
+            -ms-box-pack: center;
+            -ms-box-align: center;
+
+            display: box;
+            box-orient: horizontal;
+            box-pack: center;
+            box-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="classbox">
+    <form action="/book/update" method="POST">
+        <div>
+            <h3 style="text-align: center">更新书籍</h3>
+        </div>
+        <div>
+            <label>新的书名
+                <input type="text" name="title" value="{{.Title}}">
+            </label>
+        </div>
+        <div>
+            <label>新的价格
+                <input type="number" name="price" value="{{.Price}}">
+            </label>
+        </div>
+        <div>
+            <label>id
+                <input type="number" name="id" value="{{.ID}}" readonly/>
+            </label>
+        </div>
+        <div>
+            <input type="submit" name="提交">
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
+{{end}}
